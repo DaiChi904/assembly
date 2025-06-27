@@ -62,7 +62,13 @@ char** createPattern(int n, int cnt, char** pattern) {
 int main(void) {
     int n;
     char** pattern;
-    scanf("%d", &n);
+    int res;
+
+    res = scanf("%d", &n);
+
+    if (res != 0) {
+        return 1;
+    }
 
     pattern = createPattern(n, 0, NULL);
     
