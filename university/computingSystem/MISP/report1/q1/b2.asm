@@ -16,29 +16,39 @@ step1:
     # --- ステップ1: 隣接するペアをそれぞれソート ---
     # ($t0, $t1)のペアを降順に
     bge  $t0, $t1, step1_next
-    move $t4, $t0; move $t0, $t1; move $t1, $t4
+    move $t4, $t0
+    move $t0, $t1
+    move $t1, $t4
 
 step1_next:
     # ($t2, $t3)のペアを降順に
     bge  $t2, $t3, step2
-    move $t4, $t2; move $t2, $t3; move $t3, $t4
+    move $t4, $t2
+    move $t2, $t3
+    move $t3, $t4
 
 step2:
     # --- ステップ2: 外側と内側のペアをソート ---
     # ($t0, $t2)のペアを降順に
     bge  $t0, $t2, step2_next
-    move $t4, $t0; move $t0, $t2; move $t2, $t4
+    move $t4, $t0
+    move $t0, $t2
+    move $t2, $t4
 
 step2_next:
     # ($t1, $t3)のペアを降順に
     bge  $t1, $t3, step3
-    move $t4, $t1; move $t1, $t3; move $t3, $t4
+    move $t4, $t1
+    move $t1, $t3
+    move $t3, $t4
 
 step3:
     # --- ステップ3: 中央のペアをソート ---
     # ($t1, $t2)のペアを降順に
     bge  $t1, $t2, combine
-    move $t4, $t1; move $t1, $t2; move $t2, $t4
+    move $t4, $t1
+    move $t1, $t2
+    move $t2, $t4
 
 combine:
     # $t0-$t3の値を結合して$s1に格納
