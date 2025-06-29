@@ -4,13 +4,13 @@ main:
     li   $s0, 0x03020104
 
     # $s0から8ビットずつ4つの値を抽出し、$t0-$t3に格納
-    andi $t0, $s0, 0xFF       # バイト0 (AA)
+    andi $t0, $s0, 0xFF       # バイト0
     srl  $t1, $s0, 8
-    andi $t1, $t1, 0xFF       # バイト1 (CC)
+    andi $t1, $t1, 0xFF       # バイト1
     srl  $t2, $s0, 16
-    andi $t2, $t2, 0xFF       # バイト2 (BB)
+    andi $t2, $t2, 0xFF       # バイト2
     srl  $t3, $s0, 24
-    andi $t3, $t3, 0xFF       # バイト3 (DD) 
+    andi $t3, $t3, 0xFF       # バイト3
 
     # ループカウンタ
     li   $t5, 0
