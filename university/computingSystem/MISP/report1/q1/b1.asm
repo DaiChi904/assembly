@@ -25,17 +25,23 @@ sort:
 
     # if (t0 < t1) then swap(t0, t1)
     bge  $t0, $t1, next1
-    move $t4, $t0; move $t0, $t1; move $t1, $t4
+    move $t4, $t0
+    move $t0, $t1
+    move $t1, $t4
 
 next1:
     # if (t1 < t2) then swap(t1, t2)
     bge  $t1, $t2, next2
-    move $t4, $t1; move $t1, $t2; move $t2, $t4
+    move $t4, $t1
+    move $t1, $t2
+    move $t2, $t4
 
 next2:
     # if (t2 < t3) then swap(t2, t3)
     bge  $t2, $t3, end_of_pass
-    move $t4, $t2; move $t2, $t3; move $t3, $t4
+    move $t4, $t2
+    move $t2, $t3
+    move $t3, $t4
 
 end_of_pass:
     # ループカウンタをインクリメント
